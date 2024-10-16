@@ -26,13 +26,29 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              {
+                "input": "src/theme-neutral.scss",
+                "bundleName": "neutral",
+                "inject": false
+              },
+              {
+                "input": "src/theme-boy.scss",
+                "bundleName": "boy",
+                "inject": false
+              },
+              {
+                "input": "src/theme-girl.scss",
+                "bundleName": "girl",
+                "inject": false
+              },
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeflex/primeflex.css"
             ],
             "scripts": []
           },

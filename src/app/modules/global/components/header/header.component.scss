@@ -1,0 +1,62 @@
+:host ::ng-deep .p-menubar {
+  // border-radius: 0;
+  // border: none;
+  // border-bottom: 1px solid #C1D464;
+  // background-color: transparent;
+
+  // position: fixed;
+  // height: 60px;
+  // top: 0;
+  // left: 0;
+  // right: 0;
+  // z-index: 1000;
+  // width: 100%;
+
+  // background-color: #121212;
+}
+
+.search-container{
+  width: calc(100vw - 50vw);
+}
+
+.img-logo{
+  width: 5%;
+  // border-radius: 50%;
+}
+
+.notification{
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: var(--primary-color);
+
+  background-color: transparent;
+  border: none;
+
+  &::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgb(231, 43, 43);
+
+    position: absolute;
+
+    top: -4px;
+    right: -1px;
+    // border: 2px solid transparent;
+}
+
+  animation: balancar 2.5s ease-in-out infinite;
+
+  @keyframes balancar {
+    0% {
+        transform: rotate(12deg);
+    }
+    50% {
+        transform: rotate(-12deg);
+    }
+    100% {
+          transform: rotate(12deg);
+    }
+  }
+}
