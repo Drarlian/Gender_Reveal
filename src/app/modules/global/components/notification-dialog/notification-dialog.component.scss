@@ -14,17 +14,34 @@
   z-index: 99;
 }
 
+h3{
+  color: var(--primary-color);
+  text-align: center;
+}
+
 .notification-text{
   font-size: 1rem;;
 
   .personalized{
-    color: #00B0FF;
+    color: var(--primary-color);
     font-weight: 700;
+  }
+
+  .link-personalized{
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-style: italic;
+    transition: all 1s ease;
+
+    &:hover{
+      color: var(--secondary-color);
+    }
   }
 }
 
 .custom-dialog ::ng-deep .p-dialog-title {
-  color: #00B0FF;
+  color: var(--primary-color);
   font-size: 1.8rem;
   animation: pulse 1.6s infinite;
 

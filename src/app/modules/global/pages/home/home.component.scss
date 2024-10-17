@@ -49,24 +49,26 @@
   .main-container{
     display: flex;
     flex-direction: column;
-    height: 100%;
-    background-color: red;
+    height: 450px;
+    // background-color: red;
+    flex: 1;
 
-    .teste{
-      height: auto;
+    h2{
+      text-align: center;
     }
 
-    h1{
-      // font-weight: 600;
-      // color: white !important;
+    .option-img{
+      width: 40%;
     }
 
-    .button-container{
+    .buttons-container{
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
+      gap: 1rem;
       flex: 1;
-      background-color: blue;
+      // background-color: green;
     }
   }
 }
@@ -76,6 +78,16 @@
 }
 
 :host ::ng-deep .p-card-body {
-  height: 500px;
+  height: 100%;
+  width: 600px;
 }
 
+:host ::ng-deep .p-button {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+:host ::ng-deep .p-button:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}

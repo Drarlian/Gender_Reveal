@@ -34,4 +34,13 @@ export class ThemeService {
     }
     this.localStorage.setLocalStorage('THEME-GUESS-GENDER', {themePreference: this.theme.value}, false);
   }
+
+  toggleThemeOption(optionValue: string){
+    const linkElement = document.getElementById('app-theme') as HTMLLinkElement;
+
+    linkElement.href = optionValue + '.css';
+    this.theme.next(optionValue);
+
+    this.localStorage.setLocalStorage('THEME-GUESS-GENDER', {themePreference: this.theme.value}, false);
+  }
 }

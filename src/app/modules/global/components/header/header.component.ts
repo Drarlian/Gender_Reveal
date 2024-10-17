@@ -26,9 +26,12 @@ export class HeaderComponent implements OnInit{
         icon: 'pi pi-home'
       },
       {
-        label: 'Contact',
+        label: 'Placar',
+        icon: 'pi pi-chart-bar'
+      },
+      {
+        label: 'Contato',
         icon: 'pi pi-envelope',
-        badge: '3'
       }
     ];
   }

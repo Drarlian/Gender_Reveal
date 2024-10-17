@@ -10,7 +10,7 @@ export class NotificationsService {
   private cookieService = inject(CookieService);
   usersService = inject(UsersService);
 
-  private visible = new BehaviorSubject<boolean>(false);
+  private visible = new BehaviorSubject<boolean>(true);
   visibleInformation = this.visible.asObservable();
 
   constructor() {

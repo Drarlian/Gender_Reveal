@@ -2,11 +2,24 @@
   <app-header>
     <app-sidebar></app-sidebar>
   </app-header>
-  <div class="home-page flex-column mt-2">
-    <p-card class="card" header="Bolão do Gênero">
-      <div class="button-container">
-        <p-button label="Inicitar Votação" />
+  <div class="home-page flex-column justify-content-center align-items-center">
+    <p-card class="card" header="Bolão do Bebê">
+      <div class="main-container">
+        <h2 [ngStyle]="{color: 'var(--primary-color)'}">Votação</h2>
+        <div class="flex justify-content-center align-items-center h-full">
+          <img class="option-img" [src]="getActualOption()">
+        </div>
+        <div class="buttons-container">
+          <div>
+            <p-button label="Nem ideia" (click)="toggleOption('neutral')" />
+          </div>
+          <div class="flex gap-3">
+            <p-button label="Menina" (click)="toggleOption('girl')" />
+            <p-button label="Menino" (click)="toggleOption('boy')" />
+          </div>
+        </div>
       </div>
     </p-card>
+    <!-- <p-button label="Inicitar Votação" size="large" /> -->
   </div>
 </div>

@@ -1,7 +1,10 @@
 <div class="shadow-div" [ngStyle]="{'display': visible ? 'inline': 'none', 'opacity': visible ? '1': '0'}" (click)="customClose()"></div>
-<p-dialog header="Notificação do Sistema" class="main-div custom-dialog" [modal]="false" [(visible)]="visible" [style]="{ width: '35rem'}" (onHide)="customClose()">
+<p-dialog header="Bolão do Chá de Revelação" class="main-div custom-dialog" [modal]="false" [(visible)]="visible" [style]="{ width: '35rem'}" (onHide)="customClose()">
   <!-- <h3>Alerta <span class="pi pi-exclamation-triangle"></span></h3> -->
-  <p class="notification-text">Estamos em período de testes do módulo de <span class="personalized">Usuários</span>.</p>
-  <p class="notification-text">Caso tenha alguma sugestão de <span class="personalized">melhoria</span> para esse módulo, por favor entre em contato através do <span class="personalized">botão de sugestão</span> no canto inferior direito do página.</p>
+  <h3>Bem Vindo!</h3>
+  <p class="notification-text">Esse é um site criado para realizar um bolão de qual vai ser o gênero do <span class="personalized">bebê</span> da futura mamãe <span class="personalized"><a class="link-personalized" href="https://www.instagram.com/marcedicas/" target="_blank" rel="noopener noreferrer">&#64;Marcedicas</a></span>.</p>
+  <p class="notification-text">Para participar bastar clicar no botão principal do site de <span class="personalized">Iniciar Votação</span> e escolher uma opção!</p>
+  <p class="notification-text">Depois de escolher uma opção ou antes de votar, você pode visualizar como está o ranking da votação e saber em que as pessoas estão votando!</p>
+  <!-- <p class="notification-text">Caso tenha alguma sugestão de <span class="personalized">melhoria</span> para esse site, por favor entre em contato através do <span class="personalized">botão de sugestão</span> no canto inferior direito do página.</p> -->
   <!-- <p class="notification-text">Devido a alterações nos dados recebidos da transportadora as informações de <span class="personalized">Ocorrência</span> e de <span class="personalized">SLA</span> foram reiniciadas.</p> -->
 </p-dialog>

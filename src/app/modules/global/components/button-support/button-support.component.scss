@@ -47,6 +47,11 @@
 }
 
 .custom-card ::ng-deep .p-card-title {
-  color: #00B0FF;
+    color: var(--primary-color);
   font-size: 1.8rem;
+}
+
+:host ::ng-deep .p-button {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
 }

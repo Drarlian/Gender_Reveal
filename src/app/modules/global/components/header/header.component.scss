@@ -15,8 +15,8 @@
   // background-color: #121212;
 }
 
-.search-container{
-  width: calc(100vw - 50vw);
+:host ::ng-deep .p-badge-no-gutter {
+  background-color: var(--primary-color) !important;
 }
 
 .img-logo{
