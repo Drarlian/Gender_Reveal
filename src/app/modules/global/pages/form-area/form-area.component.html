@@ -1,0 +1,49 @@
+<div class="all-container main-div">
+  <app-header>
+    <app-sidebar></app-sidebar>
+  </app-header>
+  <div class="home-page flex-column justify-content-center align-items-center">
+      <p-card class="card" header="Bolão do Bebê">
+        <div class="main-container">
+          <h2 [ngStyle]="{color: 'var(--primary-color)'}">Informações Pré-Bolãoz</h2>
+          <div class="flex justify-content-center h-full">
+            <form class="form" [formGroup]="basicInfos" >
+
+              <div class="form-element">
+                <p>Observação: As informações coletadas são apenas para salvar as </p>
+              </div>
+
+              <div class="form-element">
+                <p-inputGroup>
+                  <p-inputGroupAddon>
+                    <i class='pi pi-user'></i>
+                  </p-inputGroupAddon>
+                  <p-floatLabel class="input-group">
+                    <input pInputText id="name" formControlName="name" type="text" class="input-custom"/>
+                    <label for="name">Nome</label>
+                  </p-floatLabel>
+                </p-inputGroup>
+              </div>
+
+              <div class="form-element">
+                <p-inputGroup>
+                  <p-inputGroupAddon>
+                    <i class='pi pi-envelope'></i>
+                  </p-inputGroupAddon>
+                  <p-floatLabel class="input-group">
+                    <input pInputText id="email" formControlName="email" type="text" class="input-custom"/>
+                    <label for="email">Email</label>
+                  </p-floatLabel>
+                </p-inputGroup>
+              </div>
+
+              <div class="form-element flex flex-row justify-content-center align-items-center gap-3">
+                <p-button label="Cancelar" type="submit" />
+                <p-button label="Confirmar" type="submit" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </p-card>
+  </div>
+</div>

@@ -1,25 +1,38 @@
-<div class="all-container">
+<div class="shadow-div" [ngStyle]="{'display': visible ? 'inline': 'none', 'opacity': visible ? '1': '0'}" (click)="customClose()"></div>
+<div class="all-container main-div">
   <app-header>
     <app-sidebar></app-sidebar>
   </app-header>
   <div class="home-page flex-column justify-content-center align-items-center">
-    <p-card class="card" header="Bolão do Bebê">
-      <div class="main-container">
-        <h2 [ngStyle]="{color: 'var(--primary-color)'}">Votação</h2>
-        <div class="flex justify-content-center align-items-center h-full">
-          <img class="option-img" [src]="getActualOption()">
-        </div>
-        <div class="buttons-container">
-          <div>
-            <p-button label="Nem ideia" (click)="toggleOption('neutral')" />
-          </div>
-          <div class="flex gap-3">
-            <p-button label="Menina" (click)="toggleOption('girl')" />
-            <p-button label="Menino" (click)="toggleOption('boy')" />
-          </div>
-        </div>
+
+    <p-dialog header="Confirmação de Votação" class="main-div custom-dialog" [modal]="false" [(visible)]="visible" [style]="{ width: '35rem'}" (onHide)="customClose()">
+      <p class="notification-text">Tem certeza que deseja votar em <span [ngStyle]="{color: 'var(--primary-color)', fontWeight: 'bold'}">{{actualOption == 'boy' ? 'Menino' : actualOption == 'girl' ? 'Menina' : 'Neutro'}}</span>?</p>
+      <div class="flex justify-content-center align-items-center gap-3">
+        <p-button label="Não" (click)="customClose()" />
+        <p-button label="Sim" (click)="gotToNewPage()" />
       </div>
-    </p-card>
-    <!-- <p-button label="Inicitar Votação" size="large" /> -->
+    </p-dialog>
+
+    @if (wasStarted){
+      <p-card class="card" header="Bolão do Bebê">
+        <div class="main-container">
+          <h2 [ngStyle]="{color: 'var(--primary-color)'}">Votação</h2>
+          <div class="flex justify-content-center align-items-center h-full">
+            <img class="option-img" [src]="getActualOption()">
+          </div>
+          <div class="buttons-container">
+            <div>
+              <p-button label="Nem ideia" (click)="toggleOption('neutral')" />
+            </div>
+            <div class="flex gap-3">
+              <p-button label="Menina" (click)="toggleOption('girl')" />
+              <p-button label="Menino" (click)="toggleOption('boy')" />
+            </div>
+          </div>
+        </div>
+      </p-card>
+    } @else {
+      <p-button (click)="toggleStarted()" label="Inicitar Votação" size="large" />
+    }
   </div>
 </div>

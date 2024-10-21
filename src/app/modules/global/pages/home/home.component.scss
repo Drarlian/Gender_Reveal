@@ -77,6 +77,11 @@
   color: var(--primary-color);
 }
 
+:host ::ng-deep .p-dialog-title {
+  color: var(--primary-color);
+}
+
+
 :host ::ng-deep .p-card-body {
   height: 100%;
   width: 600px;
@@ -87,7 +92,27 @@
   border-color: var(--primary-color) !important;
 }
 
-:host ::ng-deep .p-button:hover {
-  background-color: var(--secondary-color);
+:host ::ng-deep .p-button:hover {                         // p-ripple p-element p-button p-component
+  background-color: var(--secondary-color);               // p-element p-ripple ng-tns-c1623988549-2 p-dialog-header-icon p-dialog-header-close p-link p-button p-component ng-star-inserted
   border-color: var(--secondary-color);
+}
+
+:host ::ng-deep .p-dialog-header-icon{
+  background-color: transparent !important;
+}
+
+.main-div{
+  z-index: 999 !important;
+}
+
+.shadow-div{
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  background: rgba(0, 0, 0, 0.4);
+
+  z-index: 99;
 }

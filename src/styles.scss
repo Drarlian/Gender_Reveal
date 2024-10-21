@@ -15,8 +15,10 @@
 body{
   margin: 0;
   padding: 0;
+  padding-top: 5px;
+  height: 100vh;
   box-sizing: border-box;
-  background-image: url('assets/images/tests/Designer\ \(7\).jpeg');
+  background-image: url('assets/images/tests/Design0.webp');
   background-size: cover; /* Faz a imagem cobrir toda a área */
   background-repeat: no-repeat; /* Impede que a imagem se repita */
   background-position: center; /* Centraliza a imagem no elemento */
@@ -56,7 +58,9 @@ h3,h1,h2 {
 }
 
 .all-container{
-  margin: 5px;
+  // margin: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 // Own DropDown Input
