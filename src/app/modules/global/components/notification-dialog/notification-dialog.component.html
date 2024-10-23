@@ -1,5 +1,5 @@
 <div class="shadow-div" [ngStyle]="{'display': visible ? 'inline': 'none', 'opacity': visible ? '1': '0'}" (click)="customClose()"></div>
-<p-dialog header="Bolão do Chá de Revelação" class="main-div custom-dialog" [modal]="false" [(visible)]="visible" [style]="{ width: '35rem'}" (onHide)="customClose()">
+<p-dialog header="Bolão do Chá de Revelação" class="main-div custom-dialog" [modal]="false" [(visible)]="visible" [style]="{ width: '35rem', margin: '5px'}" (onHide)="customClose()">
   <!-- <h3>Alerta <span class="pi pi-exclamation-triangle"></span></h3> -->
   <h3>Bem Vindo!</h3>
   <p class="notification-text">Esse é um site criado para realizar um bolão de qual vai ser o gênero do <span class="personalized">bebê</span> da futura mamãe <span class="personalized"><a class="link-personalized" href="https://www.instagram.com/marcedicas/" target="_blank" rel="noopener noreferrer">&#64;Marcedicas</a></span>.</p>

@@ -19,7 +19,7 @@ import { LoadingComponent } from '../../components/loading/loading.component';
 @Component({
   selector: 'app-form-area',
   standalone: true,
-  imports: [CardModule, ButtonModule, CommonModule, HeaderComponent, DialogModule, RippleModule, 
+  imports: [CardModule, ButtonModule, CommonModule, HeaderComponent, DialogModule, RippleModule,
     InputGroupModule, InputGroupAddonModule, InputTextModule, FloatLabelModule, FormsModule, ReactiveFormsModule, LoadingComponent],
   templateUrl: './form-area.component.html',
   styleUrl: './form-area.component.scss'
@@ -61,7 +61,7 @@ export class FormAreaComponent implements OnInit{
 
   openMercadoPagoCheckout(id: string) {
     // Declaração para o TypeScript reconhecer 'MercadoPago'
-    const mp = new (window as any).MercadoPago('CHAVE-PUBLICA-MERCADO-PAGO', {
+    const mp = new (window as any).MercadoPago('TEST-1218ac65-d3b4-47f1-befd-8c408da85082', {
       locale: 'pt-BR'
     });
 

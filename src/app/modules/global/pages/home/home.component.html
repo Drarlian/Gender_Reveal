@@ -4,7 +4,7 @@
   </app-header>
   <div class="home-page flex-column justify-content-center align-items-center">
 
-    <p-dialog header="Confirmação de Votação" class="main-div custom-dialog" [modal]="false" [(visible)]="visible" [style]="{ width: '35rem'}" (onHide)="customClose()">
+    <p-dialog header="Confirmação de Votação" class="main-div custom-dialog" [modal]="false" [(visible)]="visible" [style]="{ width: '35rem', margin : '5px'}" (onHide)="customClose()">
       <p class="notification-text">Tem certeza que deseja votar em <span [ngStyle]="{color: 'var(--primary-color)', fontWeight: 'bold'}">{{actualOption == 'boy' ? 'Menino' : actualOption == 'girl' ? 'Menina' : 'Neutro'}}</span>?</p>
       <div class="flex justify-content-center align-items-center gap-3">
         <p-button label="Não" (click)="customClose()" />
@@ -16,7 +16,7 @@
       <p-card class="card" header="Bolão do Bebê">
         <div class="main-container">
           <h2 [ngStyle]="{color: 'var(--primary-color)'}">Votação</h2>
-          <div>
+          <div class="flex justify-content-start align-items-center h-full">
             Escolha Atual: <span [ngStyle]="{color: 'var(--primary-color)', fontWeight: 'bold'}">{{actualOption == 'boy' ? 'Menino' : actualOption == 'girl' ? 'Menina' : 'Neutro'}}</span>
           </div>
           <div class="flex justify-content-center align-items-center h-full">

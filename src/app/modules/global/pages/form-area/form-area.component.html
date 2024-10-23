@@ -2,7 +2,7 @@
   <app-header>
   </app-header>
   <div class="home-page flex-column justify-content-center align-items-center">
-      <p-card class="card" header="Bolão do Bebê">
+      <p-card class="card" styleClass="shadow-3 border-radius" header="Bolão do Bebê">
         <div class="main-container">
           <h2 [ngStyle]="{color: 'var(--primary-color)'}">Informações Pré-Bolão</h2>
           @if (isLoading){
@@ -10,13 +10,13 @@
               <app-loading></app-loading>
             </div>
           } @else {
-            <div class="flex justify-content-center h-full">
+            <div class="container-form flex justify-content-center h-full">
               <form class="form" [formGroup]="basicInfos" >
-  
+
                 <div class="form-element">
                   <p><strong [ngStyle]="{color: 'var(--primary-color)'}">Observação:</strong> As informações coletadas são apenas para salvar a confirmação do pagamento.</p>
                 </div>
-  
+
                 <div class="form-element">
                   <p-inputGroup>
                     <p-inputGroupAddon>
@@ -28,7 +28,7 @@
                     </p-floatLabel>
                   </p-inputGroup>
                 </div>
-  
+
                 <div class="form-element">
                   <p-inputGroup>
                     <p-inputGroupAddon>
@@ -40,7 +40,7 @@
                     </p-floatLabel>
                   </p-inputGroup>
                 </div>
-  
+
                 <div class="form-element flex flex-row justify-content-center align-items-center gap-3">
                   <p-button label="Cancelar" type="submit" (click)="navigateTo('/home')" />
                   <p-button label="Confirmar" type="submit" (click)="submitInfos()" />
