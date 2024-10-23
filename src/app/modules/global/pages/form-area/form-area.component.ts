@@ -14,6 +14,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { MessageService } from 'primeng/api';
 import { LoadingComponent } from '../../components/loading/loading.component';
+import { environment } from '../../../../../environments/environment';
 
 
 @Component({
@@ -25,6 +26,8 @@ import { LoadingComponent } from '../../components/loading/loading.component';
   styleUrl: './form-area.component.scss'
 })
 export class FormAreaComponent implements OnInit{
+  private mercadoPagoKey = environment.mercadoPagoKey;
+
   usersService = inject(UsersService);
   messageService = inject(MessageService);
   router = inject(Router);
@@ -61,7 +64,7 @@ export class FormAreaComponent implements OnInit{
 
   openMercadoPagoCheckout(id: string) {
     // Declaração para o TypeScript reconhecer 'MercadoPago'
-    const mp = new (window as any).MercadoPago('TEST-1218ac65-d3b4-47f1-befd-8c408da85082', {
+    const mp = new (window as any).MercadoPago(this.mercadoPagoKey, {
       locale: 'pt-BR'
     });
 
