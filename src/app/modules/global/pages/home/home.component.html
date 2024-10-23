@@ -1,7 +1,6 @@
 <div class="shadow-div" [ngStyle]="{'display': visible ? 'inline': 'none', 'opacity': visible ? '1': '0'}" (click)="customClose()"></div>
 <div class="all-container main-div">
   <app-header>
-    <app-sidebar></app-sidebar>
   </app-header>
   <div class="home-page flex-column justify-content-center align-items-center">
 
@@ -17,6 +16,9 @@
       <p-card class="card" header="Bolão do Bebê">
         <div class="main-container">
           <h2 [ngStyle]="{color: 'var(--primary-color)'}">Votação</h2>
+          <div>
+            Escolha Atual: <span [ngStyle]="{color: 'var(--primary-color)', fontWeight: 'bold'}">{{actualOption == 'boy' ? 'Menino' : actualOption == 'girl' ? 'Menina' : 'Neutro'}}</span>
+          </div>
           <div class="flex justify-content-center align-items-center h-full">
             <img class="option-img" [src]="getActualOption()">
           </div>

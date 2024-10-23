@@ -1,11 +1,10 @@
 import { CardModule } from 'primeng/card';
 import { CommonModule } from '@angular/common';
 import { Component, inject} from '@angular/core';
-import { ISigninResponse } from '../../interfaces/ISignin';
+import { UserInformations } from '../../interfaces/ISignin';
 import { UsersService } from '../../services/users/users.service';
 import { ButtonModule } from 'primeng/button';
 import { HeaderComponent } from '../../components/header/header.component';
-import { SidebarComponent } from '../../components/sidebar/sidebar.component';
 import { ThemeService } from '../../services/theme/theme.service';
 import { DialogModule } from 'primeng/dialog';
 import { Router } from '@angular/router';
@@ -13,7 +12,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CardModule, ButtonModule, CommonModule, SidebarComponent, HeaderComponent, DialogModule],
+  imports: [CardModule, ButtonModule, CommonModule, HeaderComponent, DialogModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -22,7 +21,7 @@ export class HomeComponent{
   themeService = inject(ThemeService);
   router = inject(Router);
 
-  userData!: ISigninResponse | null;
+  userData!: UserInformations | null;
 
   wasStarted: boolean = false;
   actualOption: string = '';
@@ -53,6 +52,8 @@ export class HomeComponent{
     this.themeService.toggleThemeOption(optionValue);
     this.actualOption = optionValue;
     this.visible = true;
+    
+    this.usersService.changeOption(optionValue);
   }
 
   toggleStarted(){

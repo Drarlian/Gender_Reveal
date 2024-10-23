@@ -3,24 +3,11 @@ export interface ISigninRequest {
   password: string
 }
 
-export interface ISigninResponse {
+export interface UserInformations {
   user: {
-    collaboratorId: number,
     name: string,
-    lastName: string,
     email: string,
-    sectors: string[],
-    access: IAccess,
-    systems: string[],
-    teams: string[]
+    option: string
   },
-  authorities: string[],
   token: string
-}
-
-interface IAccess {
-  accessId: number,
-  username: string,
-  password: string,
-  role: string
 }
