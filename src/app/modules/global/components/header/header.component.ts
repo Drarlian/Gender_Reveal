@@ -34,11 +34,11 @@ export class HeaderComponent implements OnInit{
         icon: 'pi pi-chart-bar',
         navigateRoute: '/placar'
       },
-      {
-        label: 'Contato',
-        icon: 'pi pi-envelope',
-        navigateRoute: '/contact'
-      }
+      // {
+      //   label: 'Contato',
+      //   icon: 'pi pi-envelope',
+      //   navigateRoute: '/contact'
+      // }
     ];
   }
 

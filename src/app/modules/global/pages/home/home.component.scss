@@ -1,10 +1,8 @@
 .home-page{
   display: flex;
-  // justify-content: center;
   align-items: center;
   height: calc(100vh - 110px);
-  // background-image: url('https://img.freepik.com/fotos-premium/um-fundo-colorido-com-um-fundo-preto-e-uma-imagem-colorida-de-um-respingo-de-tinta_777078-9390.jpg');
-  // background-color: yellow;
+  user-select: none;
 
   .main-container{
     display: flex;

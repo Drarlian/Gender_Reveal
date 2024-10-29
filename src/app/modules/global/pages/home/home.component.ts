@@ -8,11 +8,13 @@ import { HeaderComponent } from '../../components/header/header.component';
 import { ThemeService } from '../../services/theme/theme.service';
 import { DialogModule } from 'primeng/dialog';
 import { Router } from '@angular/router';
+import { IOddInformations } from '../../interfaces/IUser';
+import { LoadingComponent } from '../../components/loading/loading.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CardModule, ButtonModule, CommonModule, HeaderComponent, DialogModule],
+  imports: [CardModule, ButtonModule, CommonModule, HeaderComponent, DialogModule, LoadingComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -22,17 +24,42 @@ export class HomeComponent{
   router = inject(Router);
 
   userData!: UserInformations | null;
+  oddsInformations!: IOddInformations[];
 
   wasStarted: boolean = false;
   actualOption: string = '';
   visible: boolean = false;
+  
+  isLoading: boolean = true;
+  isError: boolean = false;
 
-  ngOnInit() {
+  async ngOnInit() {
+    this.isLoading = true;
+
+    // Pegando as informações iniciais do usuário.
     this.usersService.userInformations.subscribe((data) => {
       this.userData = data;
     })
 
+    // Pegando as informações salvas do tema (opção).
     this.themeService.themeInformation.subscribe(info => this.actualOption = info);
+
+    // Pegando os valores das odds.
+    await this.getScoreBoardInformations();
+  }
+
+  async getScoreBoardInformations(){
+    const response: IOddInformations[] | boolean = await this.usersService.getOddsInformations();
+
+    if (typeof(response) == 'object') {
+      this.oddsInformations = {...response};
+      this.isLoading = false;
+      this.isError = false;
+    } else {
+      console.log('teste')
+      this.isError = true;
+      this.isLoading = false;
+    }
   }
 
   getActualOption(){

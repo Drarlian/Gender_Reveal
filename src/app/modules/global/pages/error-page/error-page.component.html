@@ -1,0 +1,14 @@
+<div class="all-container main-div">
+    <app-header />
+    <div class="home-page flex-column justify-content-center align-items-center">
+        <p-card class="card" header="Pagamento não efetuado!">
+            <div class="main-container">
+                <p>O pagamento não pode ser efetuado, tente novamente.</p>
+                <p>Caso o problema persista entre em contanto conosco através do Instagram <span class="personalized"><a class="link-personalized" href="https://www.instagram.com/marcedicas/" target="_blank" rel="noopener noreferrer">&#64;Marcedicas</a></span>.</p>
+                <div class="flex justify-content-center align-items-center flex-1">
+                    <p-button label="Voltar para a pagina inicial" type="submit" (click)="navigateTo('/home')"/>
+                </div>
+            </div>
+        </p-card>
+    </div>
+</div>

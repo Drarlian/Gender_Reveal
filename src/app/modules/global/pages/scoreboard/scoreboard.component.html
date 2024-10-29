@@ -1,0 +1,24 @@
+<div class="all-container main-div">
+    <app-header />
+
+    <div class="home-page flex-column justify-content-center align-items-center">
+        <p-card class="card" header="Placar do Bolão do Bebê">
+            <div class="main-container">
+                @if (isLoading){
+                    <div class="flex justify-content-center align-items-center loading-component">
+                        <app-loading></app-loading>
+                      </div>
+                } @else {
+                    @if (!isError){
+                        <p-chart type="pie" [data]="data" [options]="options" />
+                    } @else {
+                        <div class="flex flex-column justify-content-center align-items-center gap-5">
+                            <h2>Erro no placar!</h2>
+                            <p-button label="Atualizar a Página" type="submit" (click)="getScoreBoardInformations()"/>
+                        </div>
+                    }
+                }
+            </div>
+        </p-card>
+    </div>
+</div>

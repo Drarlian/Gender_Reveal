@@ -1,9 +1,10 @@
 import { inject, Injectable } from '@angular/core';
 import { UserInformations } from '../../interfaces/ISignin';
 import { HttpClient } from '@angular/common/http';
-// import { MessageService } from 'primeng/api';
+import { MessageService } from 'primeng/api';
 import { BehaviorSubject } from 'rxjs';
 import { environment } from '../../../../../environments/environment';
+import { IOddInformations } from '../../interfaces/IUser';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class UsersService {
   private apiUrl = environment.apiUrl;
 
   private http = inject(HttpClient);
-  // private messageService = inject(MessageService);
+  private messageService = inject(MessageService);
 
   private user = new BehaviorSubject<UserInformations | null>(null);
   userInformations = this.user.asObservable();
@@ -44,6 +45,24 @@ export class UsersService {
         } else {
           resolve(false);
         }
+      },
+      error: (error: any) => {
+        console.log(error)
+        this.messageService.add({severity: 'error', summary: 'Erro na geração pagamento!', detail: error.error.message});
+        resolve(false);
+      }
+    })})
+  }
+
+  async getOddsInformations(){
+    // ${this.apiUrl}
+    return new Promise<IOddInformations[] | boolean>((resolve, _) => {this.http.get(`${this.apiUrl}/get-actual-odds`).subscribe({
+      next: (data: any) => {
+        if (data){
+          resolve(data);
+       } else {
+        resolve(false);
+       }
       },
       error: (error: any) => {
         resolve(false);

@@ -53,9 +53,9 @@ export class ButtonSupportComponent {
   }
 
   submitEmail(){
-    console.log(this.userEmail)
-    console.log(this.userProblem)
-    console.log(this.userSugestion)
+    // console.log(this.userEmail)
+    // console.log(this.userProblem)
+    // console.log(this.userSugestion)
 
     if (this.userEmail){
       let htmlContent: string = '';

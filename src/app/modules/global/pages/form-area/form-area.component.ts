@@ -35,6 +35,8 @@ export class FormAreaComponent implements OnInit{
   basicInfos!: FormGroup;
   isLoading: boolean = false;
 
+  visible: boolean = false;
+
   ngOnInit(): void {
     const script = document.createElement('script');
     script.src = 'https://sdk.mercadopago.com/js/v2';
@@ -56,8 +58,6 @@ export class FormAreaComponent implements OnInit{
 
       if (typeof(preferenciIdResponse) == 'string'){
         this.openMercadoPagoCheckout(preferenciIdResponse);
-      } else {
-        this.messageService.add({severity: 'error', summary: 'Erro na geração pagamento!', detail: "Aconteceu um erro inesperado durante a geração do pagamento."});
       }
     }
   }
@@ -82,5 +82,13 @@ export class FormAreaComponent implements OnInit{
 
   navigateToWithQuery(route: string, target: string){
     this.router.navigate([route], { queryParams: { target } });
+  }
+
+  customOpen(){
+    this.visible = true;
+  }
+
+  customClose(){
+    this.visible = false;
   }
 }
