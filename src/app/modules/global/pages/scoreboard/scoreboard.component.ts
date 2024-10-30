@@ -44,7 +44,7 @@ export class ScoreboardComponent implements OnInit{
       const textColor = documentStyle.getPropertyValue('--text-color');
   
       this.data = {
-        labels: ['M', 'F', 'N'],
+        labels: [`M - ${this.scoreboardInformations[0].qtd}`, `F - ${this.scoreboardInformations[1].qtd}`, `N - ${this.scoreboardInformations[2].qtd}`],
         datasets: [
           {
             data: [this.scoreboardInformations[0].qtd, this.scoreboardInformations[1].qtd, this.scoreboardInformations[2].qtd],
