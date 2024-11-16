@@ -18,7 +18,7 @@ export class UsersService {
   private user = new BehaviorSubject<UserInformations | null>(null);
   userInformations = this.user.asObservable();
 
-  private option = new BehaviorSubject<string>("neutral");
+  private option = new BehaviorSubject<string>("girl");
   optionInformation = this.user.asObservable();
 
   constructor() {

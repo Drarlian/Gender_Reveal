@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { PrimeNGConfig } from 'primeng/api';
-import { ThemeService } from './modules/global/services/theme/theme.service';
 import { UsersService } from './modules/global/services/users/users.service';
 import { ToastModule } from 'primeng/toast';
 import { ButtonSupportComponent } from './modules/global/components/button-support/button-support.component';
@@ -18,7 +17,7 @@ import { NotificationDialogComponent } from './modules/global/components/notific
 export class AppComponent {
   title = 'angular-test-camp';
 
-  constructor(private primeConfig: PrimeNGConfig, private themeService: ThemeService, usersService: UsersService, private notificationsService: NotificationsService) {}
+  constructor(private primeConfig: PrimeNGConfig, usersService: UsersService, private notificationsService: NotificationsService) {}
 
   ngOnInit() {
     this.primeConfig.ripple = true;

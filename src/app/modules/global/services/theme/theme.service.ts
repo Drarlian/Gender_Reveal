@@ -8,18 +8,18 @@ import { StorageService } from '../local-storage/storage.service';
 export class ThemeService {
   private localStorage = inject(StorageService);
 
-  private theme = new BehaviorSubject<string>('neutral');
+  private theme = new BehaviorSubject<string>('girl');
   themeInformation = this.theme.asObservable();
 
   constructor() {
-    const localTheme = this.localStorage.getLocalStorage('THEME-GUESS-GENDER');
+    // const localTheme = this.localStorage.getLocalStorage('THEME-GUESS-GENDER');
 
-    if (localTheme){
-      this.theme.next(localTheme.themePreference);
+    // if (localTheme){
+    //   this.theme.next(localTheme.themePreference);
 
-      const linkElement = document.getElementById('app-theme') as HTMLLinkElement;
-      linkElement.href = localTheme.themePreference + '.css';
-    }
+    //   const linkElement = document.getElementById('app-theme') as HTMLLinkElement;
+    //   linkElement.href = localTheme.themePreference + '.css';
+    // }
   }
 
   toggleTheme() {
