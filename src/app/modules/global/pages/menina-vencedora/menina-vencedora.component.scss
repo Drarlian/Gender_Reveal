@@ -1,0 +1,109 @@
+.home-page{
+    display: flex;
+    align-items: center;
+    height: calc(100vh - 110px);
+    user-select: none;
+
+    .main-container{
+        display: flex;
+        flex-direction: column;
+        height: 450px;
+        // background-color: red;
+        flex: 1;
+
+        h2{
+        text-align: center;
+        }
+
+        .option-img{
+        width: 40%;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+
+        @media (max-width: 600px) {
+            width: 60%;
+        }
+        }
+
+        .buttons-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
+        flex: 1;
+        // background-color: green;
+        }
+    }
+}
+
+:host ::ng-deep .p-card-title {
+    color: var(--primary-color);
+}
+
+:host ::ng-deep .p-dialog-title {
+    color: var(--primary-color);
+}
+
+
+:host ::ng-deep .p-card-body {
+    height: 100%;
+    width: 600px;
+
+@media (max-width: 600px) {
+    width: 98vw;
+}
+}
+
+:host ::ng-deep .p-button {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+:host ::ng-deep .p-button:hover {                         // p-ripple p-element p-button p-component
+    background-color: var(--secondary-color);               // p-element p-ripple ng-tns-c1623988549-2 p-dialog-header-icon p-dialog-header-close p-link p-button p-component ng-star-inserted
+    border-color: var(--secondary-color);
+}
+
+:host ::ng-deep .p-dialog-header-icon{
+    background-color: transparent !important;
+}
+
+.main-div{
+    z-index: 999 !important;
+}
+
+.shadow-div{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    background: rgba(0, 0, 0, 0.4);
+
+    z-index: 99;
+}
+  
+
+.notification-text{
+    font-size: 1rem;;
+    text-align: center;
+
+    .personalized{
+        color: var(--primary-color);
+        font-weight: 700;
+    }
+
+    .link-personalized{
+        cursor: pointer;
+        text-decoration: none;
+        color: var(--primary-color);
+        font-style: italic;
+        transition: all 1s ease;
+
+        &:hover{
+        color: var(--secondary-color);
+        }
+    }
+}
